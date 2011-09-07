@@ -1,6 +1,6 @@
 (function( $ ){ 
 	$.fn.tabs = function(options) {
-		var options = $.extend({      //Объявление настроек по умолчанию, которые можно переопределить в вызове плагина
+		var options = $.extend({
 			timeOut: 500,
 			animateTime: 500,
 			heder:'h5',
@@ -25,10 +25,10 @@
 				$(container).before(spisok)
 				tabs.hide()
 				$('ul.'+options.listClass+' a').click(function(event){
-					tabs.hide() // прячем все табы
-					tabs.filter(this.hash).show() // показываем содержимое текущего
-						$('ul.'+options.listClass+' a').removeClass('selected') // у всех убираем класс 'selected'
-					$(this).addClass('selected') // текушей вкладке добавляем класс 'selected'
+					tabs.hide() // РїСЂСЏС‡РµРј РІСЃРµ С‚Р°Р±С‹
+					tabs.filter(this.hash).show() // РїРѕРєР°Р·С‹РІР°РµРј СЃРѕРґРµСЂР¶РёРјРѕРµ С‚РµРєСѓС‰РµРіРѕ
+						$('ul.'+options.listClass+' a').removeClass('selected') // Сѓ РІСЃРµС… СѓР±РёСЂР°РµРј РєР»Р°СЃСЃ 'selected'
+					$(this).addClass('selected') // С‚РµРєСѓС€РµР№ РІРєР»Р°РґРєРµ РґРѕР±Р°РІР»СЏРµРј РєР»Р°СЃСЃ 'selected'
 					event.preventDefault()
 					}).filter('a[href|=#'+activeTab+']').click();
 		})
