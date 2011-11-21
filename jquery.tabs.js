@@ -12,25 +12,31 @@
 			var container = $(this),
 				tabs = $(this).children(),
 				spisok,
+				tabsInitId='tabsNav'+Math.floor(10000 * (Math.random() % 1)),
 				activeTab= $(tabs[0]).attr('id') != '' ? $(tabs[0]).attr('id') : $(tabs[0]).attr('id', 'tabs'+Math.floor(10000 * (Math.random() % 1))).attr('id');
-				container.css('position', 'relative');
-				spisok='<ul class="'+options.listClass+'">'
-				tabs.each(function(index) {
-					var tabid=$(tabs[index]).attr('id') != '' ? $(tabs[index]).attr('id') : $(tabs[index]).attr('id', 'tabs'+Math.floor(10000 * (Math.random() % 1))).attr('id')
-					spisok+='<li><a href="#'+tabid+'">'+$(tabs[index]).find(options.heder+':first').text()+"</a></li>"
-					$(tabs[index]).find(options.heder+':first').detach()
-					$(tabs[index]).addClass(options.tabsClass)
-				})
-				spisok+="</ul>"
-				$(container).before(spisok)
-				tabs.hide()
-				$('ul.'+options.listClass+' a').click(function(event){
-					tabs.hide() // прячем все табы
-					tabs.filter(this.hash).show() // показываем содержимое текущего
-						$('ul.'+options.listClass+' a').removeClass('selected') // у всех убираем класс 'selected'
-					$(this).addClass('selected') // текушей вкладке добавляем класс 'selected'
-					event.preventDefault()
-					}).filter('a[href|=#'+activeTab+']').click();
+			container.css('position', 'relative');
+			spisok='<ul class="' + options.listClass + '" id="'+tabsInitId+'">';
+			tabs.each(function(index) {
+				var tabid=$(tabs[index]).attr('id') != '' ? $(tabs[index]).attr('id') : $(tabs[index]).attr('id', 'tabs'+Math.floor(10000 * (Math.random() % 1))).attr('id')
+				spisok+='<li><a href="#'+tabid+'">'+$(tabs[index]).find(options.heder+':first').text()+"</a></li>"
+				$(tabs[index]).find(options.heder+':first').detach()
+				$(tabs[index]).addClass(options.tabsClass)
+			})
+			spisok+="</ul>"
+			$(container).before(spisok)
+			tabs.hide()
+			$('#'+tabsInitId+' a').click(function(event){
+				tabs.hide() // прячем все табы
+				tabs.filter(this.hash).show() // показываем содержимое текущего
+					$('#'+tabsInitId+' a.selected').removeClass('selected') // убираем класс 'selected' у старой вкладки
+				$(this).addClass('selected') // текушей вкладке добавляем класс 'selected'
+				event.preventDefault()
+				}).filter('a[href|=#'+activeTab+']').click();
 		})
 	}; 
 })(jQuery);
+$(window).load(function() {
+	if($('.tabs').length>0){
+		$('.tabs').tabs();
+	}
+})
