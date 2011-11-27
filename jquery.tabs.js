@@ -14,11 +14,11 @@
 				spisok,
 				tabsInitId='tabsNav'+Math.floor(10000 * (Math.random() % 1)),
 				urlHash = window.location.href.replace(/\S*#/,''),
-				activeTab= $(tabs[0]).attr('id') != '' ? $(tabs[0]).attr('id') : $(tabs[0]).attr('id', 'tabs'+Math.floor(10000 * (Math.random() % 1))).attr('id');
+				activeTab= typeof($(tabs[0]).attr('id'))!=="undefined" ? $(tabs[0]).attr('id') : $(tabs[0]).attr('id', 'tabs'+Math.floor(10000 * (Math.random() % 1))).attr('id');
 			container.css('position', 'relative');
 			spisok='<ul class="' + options.listClass + '" id="'+tabsInitId+'">';
 			tabs.each(function(index) {
-				var tabid=$(tabs[index]).attr('id') != '' ? $(tabs[index]).attr('id') : $(tabs[index]).attr('id', 'tabs'+Math.floor(10000 * (Math.random() % 1))).attr('id')
+				var tabid=typeof($(tabs[index]).attr('id'))!=="undefined" ? $(tabs[index]).attr('id') : $(tabs[index]).attr('id', 'tabs'+Math.floor(10000 * (Math.random() % 1))).attr('id')
 				spisok+='<li><a href="#'+tabid+'">'+$(tabs[index]).find(options.heder+':first').text()+"</a></li>"
 				$(tabs[index]).find(options.heder+':first').detach()
 				$(tabs[index]).addClass(options.tabsClass)
