@@ -1,0 +1,68 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Пример</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="jquery.tabs.js"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			if($('.tabs').length>0){
+				$('.tabs').tabs();
+			}
+		})
+	</script>
+	<style>
+		.tabNavigation li{
+			list-style: none;
+			display: inline;
+			margin: 0 0.5em;
+		}
+			.tabNavigation a{
+				text-decoration:none;
+				border-bottom: 1px dashed #999
+			}
+			.tabNavigation a.selected{border-bottom: none;}
+		.tabs_content{
+			padding: 1em;
+			border: 1px dashed #999;
+		}
+	</style>
+</head>
+<body>
+<h1>Примеры</h1>
+<h2>Простой таб</h2>
+<div class="tabs">
+	<div>
+		<h5>Таб 1</h5>
+		<p>Я содержимое первого таба</p>
+	</div>
+	<div>
+		<h5>Таб 2</h5>
+		<p>Я содержимое второго таба</p>
+	</div>
+</div>
+<pre class="cpp" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000080;">&lt;</span><span style="color: #0000dd;">div</span> <span style="color: #0000ff;">class</span><span style="color: #000080;">=</span><span style="color: #FF0000;">&quot;tabs&quot;</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000080;">&lt;</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span>h5<span style="color: #000080;">&gt;</span>Таб <span style="color: #0000dd;">1</span><span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>h5<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span>p<span style="color: #000080;">&gt;</span>Я содержимое первого таба<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>p<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000080;">&lt;</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span>h5<span style="color: #000080;">&gt;</span>Таб <span style="color: #0000dd;">2</span><span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>h5<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span>p<span style="color: #000080;">&gt;</span>Я содержимое второго таба<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>p<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li></ol></pre>
+<h2>Вложенные табы</h2>
+<div class="tabs">
+	<div>
+		<h5>Таб 1</h5>
+		<p>Я содержимое первого таба</p>
+		<div class="tabs">
+			<div>
+				<h5>Таб 1.1</h5>
+				<p>Я содержимое вложенного первого таба</p>
+			</div>
+			<div>
+				<h5>Таб 1.2</h5>
+				<p>Я содержимое вложенного второго таба</p>
+			</div>
+		</div>
+	</div>
+	<div>
+		<h5>Таб 2</h5>
+		<p>Я содержимое второго таба</p>
+	</div>
+</div>
+<pre class="cpp" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000080;">&lt;</span><span style="color: #0000dd;">div</span> <span style="color: #0000ff;">class</span><span style="color: #000080;">=</span><span style="color: #FF0000;">&quot;tabs&quot;</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000080;">&lt;</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span>h5<span style="color: #000080;">&gt;</span>Таб <span style="color: #0000dd;">1</span><span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>h5<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span>p<span style="color: #000080;">&gt;</span>Я содержимое первого таба<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>p<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span><span style="color: #0000dd;">div</span> <span style="color: #0000ff;">class</span><span style="color: #000080;">=</span><span style="color: #FF0000;">&quot;tabs&quot;</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000080;">&lt;</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000080;">&lt;</span>h5<span style="color: #000080;">&gt;</span>Таб <span style="color:#800080;">1.1</span><span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>h5<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000080;">&lt;</span>p<span style="color: #000080;">&gt;</span>Я содержимое вложенного первого таба<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>p<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000080;">&lt;</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000080;">&lt;</span>h5<span style="color: #000080;">&gt;</span>Таб <span style="color:#800080;">1.2</span><span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>h5<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000080;">&lt;</span>p<span style="color: #000080;">&gt;</span>Я содержимое вложенного второго таба<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>p<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000080;">&lt;</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span>h5<span style="color: #000080;">&gt;</span>Таб <span style="color: #0000dd;">2</span><span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>h5<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #000080;">&lt;</span>p<span style="color: #000080;">&gt;</span>Я содержимое второго таба<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span>p<span style="color: #000080;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000080;">&lt;</span><span style="color: #000040;">/</span><span style="color: #0000dd;">div</span><span style="color: #000080;">&gt;</span></div></li></ol></pre>
+</body>
+</html>
