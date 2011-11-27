@@ -13,6 +13,7 @@
 				tabs = $(this).children(),
 				spisok,
 				tabsInitId='tabsNav'+Math.floor(10000 * (Math.random() % 1)),
+				urlHash = window.location.href.replace(/\S*#/,''),
 				activeTab= $(tabs[0]).attr('id') != '' ? $(tabs[0]).attr('id') : $(tabs[0]).attr('id', 'tabs'+Math.floor(10000 * (Math.random() % 1))).attr('id');
 			container.css('position', 'relative');
 			spisok='<ul class="' + options.listClass + '" id="'+tabsInitId+'">';
@@ -21,6 +22,7 @@
 				spisok+='<li><a href="#'+tabid+'">'+$(tabs[index]).find(options.heder+':first').text()+"</a></li>"
 				$(tabs[index]).find(options.heder+':first').detach()
 				$(tabs[index]).addClass(options.tabsClass)
+				if(tabid == urlHash) activeTab=tabid;
 			})
 			spisok+="</ul>"
 			$(container).before(spisok)
@@ -35,8 +37,3 @@
 		})
 	}; 
 })(jQuery);
-$(window).load(function() {
-	if($('.tabs').length>0){
-		$('.tabs').tabs();
-	}
-})
