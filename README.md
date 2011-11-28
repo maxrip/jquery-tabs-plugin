@@ -15,4 +15,4 @@ $('.tabs').tabs()
 }
 
 ##Демо
-[Пример использования](http://tkyk.github.com/jquery-history-plugin/)
+[Пример использования](http://maxrip.github.com/jquery-tabs-plugin/)
